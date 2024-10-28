@@ -1,0 +1,35 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4x14);
+  align-items: center;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.hero .text-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  padding: 0 8rem;
+}
+
+.hero .primary-heading {
+  font-size: var(--font-size-primary-heading);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero .primary-heading .name-pulse {
+  font-size: inherit;
+  font-weight: inherit;
+  background: radial-gradient(100.64% 138.68% at 30.51% 3.7%, #54A7D1 29.14%, #FF7A00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .primary-subheading {
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-secondary-txt);
+}

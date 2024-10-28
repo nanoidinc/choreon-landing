@@ -1,0 +1,37 @@
+.card-list {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.card {
+  aspect-ratio: 1.1568627450980393 / 1;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(4px * 7);
+  padding: 2rem;
+}
+
+.card.with-bg {
+  background-image: url('/images/card-bg.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card .title {
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card .index {
+  font-size: var(--font-size-36);
+  font-weight: var(--font-weight-bold);
+}
+
+.card .description {
+  color: var(--color-secondary-txt);
+  font-size: var(--font-size-16);
+}
+
+
+

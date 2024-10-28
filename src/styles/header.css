@@ -1,0 +1,14 @@
+header .logo {
+  height: 24px;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: var(--space-16);
+}
+
+header nav ul li a {
+  color: var(--color-secondary-txt);
+  text-decoration: none;
+}

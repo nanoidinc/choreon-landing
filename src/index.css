@@ -1,0 +1,127 @@
+:root {
+  --color-dark: #121212;
+  --color-primary: #54a7d1;
+  --color-primary-active: #438BAB;
+  --color-secondary-txt: #CCCCCC;
+  --color-divider: #333333;
+  
+  /* Font and Size Variables */
+  --font-family: 'Poppins', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --letter-spacing: -2%;
+  --line-height: 125%;
+
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-36: 36px;
+  --font-size-primary-heading: 60px;
+  --font-size-section-title: 42px;
+  
+  /* Layout Variables */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-4x14: calc(4px * 14);
+  --space-4x15: calc(4px * 15);
+  --border-radius: 8px;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: #ffffff;
+}
+
+body, * {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  font-size: var(--font-size-16);
+}
+
+footer, header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16) var(--space-4x15);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-secondary-txt);
+  font-size: var(--font-size-14);
+  position: relative;
+  display: flex;
+  padding: var(--space-4) var(--space-8);
+}
+
+/* Section */
+.section {
+  padding: 2rem 12rem;
+}
+
+.section-title {
+  font-size: var(--font-size-section-title);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-20);
+  padding: 0 10rem;
+}
+
+/* Text classes */
+.txt-center {
+  text-align: center !important;
+}
+
+/* Atoms */
+.btn {
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  padding: var(--space-8) var(--space-12);
+  cursor: pointer;
+  display: flex;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-active);
+}
+
+.link:after {
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 0;
+  background-color: var(--color-primary);
+  transition: width 0.15s;
+}
+
+.link:hover:after {
+  width: 100%;
+}
