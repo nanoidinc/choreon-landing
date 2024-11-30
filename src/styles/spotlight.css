@@ -21,9 +21,9 @@
   box-shadow: 0 4px 4px #00000040, 0 4px 4px #00000040;
   filter: blur(25px);
   top: 0;
-  right: 0;
+  right: -100px;
   bottom: 0;
-  left: 0;
+  left: -100px;
   position: absolute;
   z-index: 0;
 }
@@ -37,19 +37,22 @@
   border-radius: 100%;
   filter: blur(2.5px);
   top: 40px;
-  right: 0;
+  right: -100px;
   bottom: 0;
-  left: 0;
+  left: -100px;
   position: absolute;
   z-index: 1;
 }
 
 
 .spotlight .img-wrapper {
-  aspect-ratio: 1.9254545454545455 / 1;
-  width: 100%;
+  aspect-ratio: 325 / 168;
   display: flex;
-  position: inherit;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   overflow: visible;
   padding: 2rem 8rem;

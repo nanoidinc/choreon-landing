@@ -10,7 +10,7 @@ export function Hero({ data }) {
         <h5 className="primary-subheading">{primarySubHeading}</h5>
       </div>
       <CtaBtn action={action} />
-      <Spotlight img={spotlightImg} />
+      <Spotlight img={spotlightImg} offsetTop={80} />
     </section>
   );
 }

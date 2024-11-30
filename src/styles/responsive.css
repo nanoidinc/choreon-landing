@@ -1,19 +1,181 @@
-/* Small devices (phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  
+/* Desktop First */
+/* Small devices (phones, <= 768px) */
+@media only screen and (max-width: 790px) {
+  header .hamburger-menu-icon {
+    display: flex;
+  }
+
+  header nav.hamburger-menu ul {
+    flex-direction: column;
+    padding: 1.25rem 1rem;
+    position: fixed;
+    z-index: 3;
+    top: 3.75rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.15s ease-in-out;
+    background-color: var(--color-dark);
+    color: white;
+  }
+
+  header nav.hamburger-menu.open ul {
+    transform: translateX(0);
+  }
+
+  .hero .text-group {
+    padding: 2rem 2.75rem;
+  }
+
+  .hero .primary-heading {
+    font-size: var(--font-size-28);
+  }
+
+  .hero .primary-subheading {
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .spotlight.full {
+    height: 450px;
+  }
+
+  .spotlight .img-wrapper, .section, .hero .text-group {
+    padding: 2rem 2.75rem;
+  }
+
+  header, footer {
+    padding: 1rem 2rem;
+  }
+
+  .section-title {
+    font-size: var(--font-size-28);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-14);
+    padding: 0 2.75rem;
+  }
+
+  .card-list {
+    flex-direction: column;
+  }
+
+  .card .title {
+    font-size: var(--font-size-20);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .card {
+    align-items: center;
+    text-align: center;
+    padding: 2rem 4rem;
+    aspect-ratio: initial;
+    background: linear-gradient(143.09deg, rgba(91, 158, 190, 0.15) 61.28%, rgba(42, 73, 88, 0.15) 90.03%);
+    border-radius: 6px;
+  }
+
+  .detail-with-img {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .detail-with-img .img {
+    width: 80%;
+  }
+
+  .detail-with-img .txt-group {
+    padding-left: 0;
+  }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  
+/* Tablets 791px -> 1024px */
+@media only screen and (min-width: 791px) and (max-width: 1024px) {
+  .spotlight .img-wrapper, .section {
+    padding: 2rem;
+  }
+
+  header, footer {
+    padding: 1rem 2rem;
+  }
+
+  .spotlight.full {
+    height: 660px;
+  }
+
+  .hero .primary-heading {
+    font-size: var(--font-size-36);
+  }
+
+  .hero .primary-subheading {
+    font-size: var(--font-size-16);
+  }
+
+  .section-title {
+    font-size: var(--font-size-32);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-16);
+  }
+
+  .card .title {
+    font-size: var(--font-size-14);
+  }
+
+  .card .description {
+    font-size: var(--font-size-12);
+  }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  
+/* Laptops, small desktops 1024px -> 1280px */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .spotlight .img-wrapper, .section {
+    padding: 2rem 6rem;
+  }
+
+  header, footer {
+    padding: 1rem 6rem;
+  }
+
+  .spotlight.full {
+    height: 750px;
+  }
+
+  .hero .primary-heading {
+    font-size: var(--font-size-42);
+  }
+
+  .hero .primary-subheading {
+    font-size: var(--font-size-18);
+  }
+
+  .section-title {
+    font-size: var(--font-size-36);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-18);
+  }
+
+  .card .title {
+    font-size: var(--font-size-16);
+  }
+
+  .card .description {
+    font-size: var(--font-size-14);
+  }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  
+@media only screen and (min-width: 791px) and (max-width: 1280px) {
+  .card {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .card .icon {
+    width: 2rem;
+  }
 }

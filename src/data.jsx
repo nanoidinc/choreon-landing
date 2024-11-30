@@ -30,6 +30,7 @@ export const data = {
     links: navLinks,
     linkActions: [earlyAccessCta],
   },
+  
   hero: {
     primaryHeading: (
       <>
@@ -48,15 +49,24 @@ export const data = {
     action: earlyAccessCta,
   },
 
+  servicesOverview: {
+    title: 'Build your dream, let us handle the shipping.',
+    subtitle: 'Focus on your product and ship quickly while we handle the delivery infrastructure behind the scenes. Build, prototype, and deploy without overspending.',
+    img: {
+      src: `${IMAGE_PATH}services-ui.png`,
+      alt: 'Choreon Services Page.',
+    },
+  },
+
   getStartedSteps: {
     title: 'Get Started in 3 Steps!',
     cards: [
       {
-        title: 'Connect your Git Account.',
-        description: 'Log in with Github or GitLab.',
+        title: 'Login via a Git Provider.',
+        description: 'Log in with Github or GitLab. Soon there will be BitBucket too.',
       },
       {
-        title: 'Setup an Organization.',
+        title: 'Setup your Organization.',
         description:
           'Provide your organization name, along with an optional website URL and logo.',
       },
@@ -149,7 +159,7 @@ export const data = {
   },
 
   nextIdea: {
-    title: 'Built for Next Big Idea.',
+    title: 'Built for your next big idea.',
     cards: [
       {
         icon: `${IMAGE_PATH}icon-rocket.svg`,

@@ -1,12 +1,14 @@
 footer {
+  display: flex;
   flex-direction: column;
+  padding: 1rem 3.75rem;
 }
 
 footer .social-links, .tos {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem 12rem;
+  padding: 1rem 0;
   width: 100%;
 }
 
@@ -18,7 +20,7 @@ footer .social-links > * {
   flex: 1 1 0;
 }
 
-footer .tos ul li, ul li .link {
+footer .tos ul li, footer ul li .link {
   font-size: var(--font-size-12);
 }
 

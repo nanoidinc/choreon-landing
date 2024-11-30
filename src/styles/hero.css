@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: 4rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero .text-group {

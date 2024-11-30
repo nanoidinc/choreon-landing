@@ -12,33 +12,8 @@
   flex: 1 1 0;
 }
 
-.detail-with-img .img-wrapper {
+.detail-with-img .img {
   flex: 1 1 0;
-  position: relative;
-}
-
-.detail-with-img .img-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(180deg, #54A7D1 -226.42%, #2B556B -186.92%);
-  opacity: 0.5;
-  box-shadow: 0px 0px 202.918px rgba(0, 87, 131, 0.5);
-  filter: blur(81.1671px);
-  backdrop-filter: blur(20.2918px);
-  z-index: 1;
-}
-
-.detail-with-img .img-wrapper.without-glow::after {
-  display: none;
-}
-
-.detail-with-img .img-wrapper .img {
-  position: relative;
-  z-index: 2;
 }
 
 .detail-with-img .title {

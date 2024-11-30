@@ -1,8 +1,30 @@
-header .logo {
-  height: 24px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3.75rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(18,18,18,0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 5;
 }
 
-header nav ul {
+header .logo {
+  height: 1.25rem;
+}
+
+header .hamburger-menu-icon {
+  height: 1.25rem;
+  cursor: pointer;
+  display: none;
+  filter: invert(1); /* Make black icon white */
+}
+
+header nav.hamburger-menu ul {
   display: flex;
   list-style-type: none;
   gap: var(--space-16);
