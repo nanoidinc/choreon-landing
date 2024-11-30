@@ -1,9 +1,9 @@
 export function Footer({ data }) {
-  const { primaryLinks, socialSites, copyrightText, otherLinks } = data;
+  const { logo, primaryLinks, socialSites, copyrightText, otherLinks } = data;
   return (
     <footer>
       <div className="social-links">
-        <img src="/images/choreon-logo.svg" alt="Choreon Logo" />
+        <img src={logo.link} alt={logo.text} />
         <ul>
           {primaryLinks.map((link) => (
             <li>

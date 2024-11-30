@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { CtaBtn } from './atoms';
 
-export function Header({ data }) {
+export function Header({ data, otherImages }) {
   const { logo, links, linkActions } = data;
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const hamburgerIcon = isMenuOpen
-    ? '/images/icon-close.svg'
-    : '/images/icon-menu.svg';
+  const hamburgerIcon = isMenuOpen ? otherImages.closeIcon : otherImages.menuIcon;
   const hamburgerMenuClass = isMenuOpen ? 'hamburger-menu open' : 'hamburger-menu';
   return (
     <header>

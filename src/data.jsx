@@ -1,4 +1,4 @@
-const IMAGE_PATH = '/images/';
+const IMAGE_PATH = `${import.meta.env.BASE_URL}images/`;
 const navLinks = [
   {
     href: '#',
@@ -226,4 +226,8 @@ export const data = {
       },
     ],
   },
+  otherImages: {
+    closeIcon: `${IMAGE_PATH}icon-close.svg`,
+    menuIcon: `${IMAGE_PATH}icon-menu.svg`,
+  }
 };

@@ -20,7 +20,7 @@ import './styles/responsive.css';
 export const Layout = () => {
   return (
     <>
-      <Header data={data.header}></Header>
+      <Header data={data.header} otherImages={data.otherImages}></Header>
       <Spacer type="section" />
       <div className="content">
         <Hero data={data.hero} />
