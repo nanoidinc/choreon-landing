@@ -61,7 +61,7 @@
 
   .section-subtitle {
     font-size: var(--font-size-16);
-    padding: 0 2.75rem;
+    padding: 0 1rem;
   }
 
   .card-list {
@@ -76,7 +76,7 @@
   .card {
     align-items: center;
     text-align: center;
-    padding: 2rem 4rem;
+    padding: 2.5rem;
     aspect-ratio: initial;
     background: linear-gradient(143.09deg, rgba(91, 158, 190, 0.15) 61.28%, rgba(42, 73, 88, 0.15) 90.03%);
     border-radius: 6px;
