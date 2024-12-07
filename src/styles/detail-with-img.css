@@ -17,11 +17,11 @@
 }
 
 .detail-with-img .title {
-  font-size: var(--font-size-28);
+  font-size: var(--font-size-22);
   font-weight: var(--font-weight-medium);
 }
 
 .detail-with-img .description {
   color: var(--color-secondary-txt);
-  font-size: var(--font-size-20);
+  font-size: var(--font-size-18);
 }

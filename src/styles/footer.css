@@ -2,9 +2,10 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1rem 3.75rem;
+  gap: var(--space-16);
 }
 
-footer .social-links, .tos {
+footer .social-links {
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -3,8 +3,8 @@ export function Footer({ data }) {
   return (
     <footer>
       <div className="social-links">
-        <img src={logo.link} alt={logo.text} />
-        <ul>
+        <img className="choreon-logo" src={logo.link} alt={logo.text} />
+        <ul className="primary-links">
           {primaryLinks.map((link) => (
             <li>
               <a className="link" href={link.href}>{link.text}</a>
@@ -23,7 +23,7 @@ export function Footer({ data }) {
         </ul>
       </div>
       <div className="tos">
-        <ul>
+        <ul className="copyright-and-links">
           <li>{copyrightText}</li>
           {otherLinks.map((link) => (
             <li>

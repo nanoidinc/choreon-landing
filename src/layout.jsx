@@ -83,7 +83,7 @@ export const Layout = () => {
         <section className="section">
           <h3 className="section-title txt-center">{data.nextIdea.title}</h3>
           <Spacer type="subsection" />
-          <Cards cards={data.nextIdea.cards} useBackground={false} />
+          <Cards cards={data.nextIdea.cards} />
         </section>
         <Spacer type="section" />
         <Spotlight size="half" content={data.bottomCtaSection} />
