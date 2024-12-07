@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { DataContext } from './context/data';
+import { NavLink } from 'react-router';
 import { CtaBtn } from './atoms';
 
-export function Header({ data, otherImages }) {
-  const { logo, links, linkActions } = data;
+export function Header() {
+  const data = useContext(DataContext);
+  const { logo, links, linkActions } = data.header;
+  const { otherImages } = data;
   const [isMenuOpen, setMenuOpen] = useState(false);
   const hamburgerIcon = isMenuOpen ? otherImages.closeIcon : otherImages.menuIcon;
   const hamburgerMenuClass = isMenuOpen ? 'hamburger-menu open' : 'hamburger-menu';
@@ -14,21 +18,22 @@ export function Header({ data, otherImages }) {
         alt=""
         className="hamburger-menu-icon"
       />
-      <img className="logo" src={logo.link} alt={logo.text} />
+      <NavLink to="/">
+        <img className="logo" src={logo.link} alt={logo.text} />
+      </NavLink>
+      
       <nav className={hamburgerMenuClass}>
         <ul>
           {links.map((link) => (
-            <li>
-              <a className="link" href={link.href}>
-                {link.text}
-              </a>
+            <li key={link.href}>
+              <NavLink to={link.href} className="link">{link.text}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
       <div className="actions">
         {linkActions.map((action) => (
-          <CtaBtn action={action} />
+          <CtaBtn key={action} action={action} />
         ))}
       </div>
     </header>

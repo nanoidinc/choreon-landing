@@ -1,16 +1,12 @@
 const IMAGE_PATH = `${import.meta.env.BASE_URL}images/`;
 const navLinks = [
   {
-    href: '#',
+    href: '/about',
     text: 'About',
   },
   {
-    href: '#',
-    text: 'Pricing',
-  },
-  {
-    href: '#',
-    text: 'Blog',
+    href: '/docs',
+    text: 'Docs',
   },
 ];
 
@@ -214,33 +210,33 @@ export const data = {
     primaryLinks: navLinks,
     socialSites: [
       {
-        href: '#',
+        href: 'www.facebook.com/choreon',
         icon: `${IMAGE_PATH}icon-fb.svg`,
         text: 'Facebook',
       },
       {
-        href: '#',
+        href: 'www.x.com/choreon',
         icon: `${IMAGE_PATH}icon-x.svg`,
         text: 'X',
       },
       {
-        href: '#',
+        href: 'www.linkedin.com/choreon',
         icon: `${IMAGE_PATH}icon-linkedin.svg`,
         text: 'LinkedIn',
       },
       {
-        href: '#',
+        href: 'www.youtube.com/choreon',
         icon: `${IMAGE_PATH}icon-yt.svg`,
         text: 'Youtube',
       },
     ],
     otherLinks: [
       {
-        href: '#',
+        href: '/policies/privacy',
         text: 'Privacy Policy',
       },
       {
-        href: '#',
+        href: '/policies/tos',
         text: 'Terms of Service',
       },
     ],
