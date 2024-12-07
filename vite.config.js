@@ -5,8 +5,8 @@ export default defineConfig({
   plugins: [react()],
   publicDir: '../public',
   root: 'src',
-  base: '/choreon-landing/',
+  base: '/',
   build: {
-    outDir: '../docs',
+    outDir: '../dist',
   },
 });
