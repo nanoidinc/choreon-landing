@@ -8,8 +8,18 @@ export function Header() {
   const { logo, links, linkActions } = data.header;
   const { otherImages } = data;
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const hamburgerIcon = isMenuOpen ? otherImages.closeIcon : otherImages.menuIcon;
-  const hamburgerMenuClass = isMenuOpen ? 'hamburger-menu open' : 'hamburger-menu';
+  const hamburgerIcon = isMenuOpen
+    ? otherImages.closeIcon
+    : otherImages.menuIcon;
+  const hamburgerMenuClass = isMenuOpen
+    ? 'hamburger-menu open'
+    : 'hamburger-menu';
+
+  const handleMenuClick = () => {
+    if (isMenuOpen) {
+      setMenuOpen(false);
+    }
+  };
   return (
     <header>
       <img
@@ -21,12 +31,20 @@ export function Header() {
       <NavLink to="/">
         <img className="logo" src={logo.link} alt={logo.text} />
       </NavLink>
-      
+
       <nav className={hamburgerMenuClass}>
         <ul>
           {links.map((link) => (
             <li key={link.href}>
-              <NavLink to={link.href} className="link">{link.text}</NavLink>
+              <NavLink
+                to={link.href}
+                onClick={handleMenuClick}
+                className={({ isActive }) =>
+                  isActive ? 'link active' : 'link'
+                }
+              >
+                {link.text}
+              </NavLink>
             </li>
           ))}
         </ul>

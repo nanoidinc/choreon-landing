@@ -119,7 +119,7 @@ body, * {
   transition: width 0.15s;
 }
 
-.link:hover:after {
+.link:hover:after, .link.active:after {
   width: 100%;
 }
 

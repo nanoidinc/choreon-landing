@@ -9,6 +9,7 @@ import './styles/cards.css';
 import './styles/detail-with-img.css';
 import './styles/spotlight.css';
 import './styles/footer.css';
+import './styles/about.css';
 import './styles/responsive.css';
 
 export const Layout = () => {
