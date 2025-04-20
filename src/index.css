@@ -4,7 +4,6 @@
   --color-primary-active: #438BAB;
   --color-secondary-txt: #CCCCCC;
   --color-divider: #333333;
-  
   /* Font and Size Variables */
   --font-family: 'Poppins', sans-serif;
 
@@ -28,7 +27,7 @@
   --font-size-42: 42px;
   --font-size-48: 48px;
   --font-size-primary-heading: 60px;
-  
+
   /* Layout Variables */
   --space-4: 4px;
   --space-8: 8px;
@@ -38,8 +37,18 @@
   --space-24: 24px;
   --space-28: 28px;
   --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-100: 100px;
+  --space-120: 120px;
+  --space-140: 140px;
   --space-4x14: calc(4px * 14);
   --space-4x15: calc(4px * 15);
+  --space-4x20: calc(4px * 20);
   --border-radius: 8px;
 }
 
