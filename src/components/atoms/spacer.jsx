@@ -18,6 +18,6 @@ export function Spacer({ type = 'subsection', amount = null }) {
   return type === 'subsection' ? (
     <div style={{ height: '48px' }}></div>
   ) : (
-    <div style={{ height: '68px' }}></div>
+    <div style={{ height: '5px' }}></div>
   );
 }

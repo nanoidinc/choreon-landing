@@ -39,17 +39,90 @@
   --space-32: 32px;
   --space-40: 40px;
   --space-48: 48px;
+  --space-50: 50px;
   --space-56: 56px;
   --space-64: 64px;
+  --space-68: 68px;
   --space-72: 72px;
+  --space-75: 75px;
   --space-80: 80px;
   --space-100: 100px;
   --space-120: 120px;
   --space-140: 140px;
+  --space-160: 160px;
+  --space-168: 168px;
   --space-4x14: calc(4px * 14);
   --space-4x15: calc(4px * 15);
   --space-4x20: calc(4px * 20);
   --border-radius: 8px;
+
+  --default-section-padding: 2rem;
+
+  --margin-lr-2k: var(--space-140);
+  --margin-lr-1440: var(--space-80);
+  --margin-lr-1280: var(--space-64);
+  --margin-lr-1024: var(--space-40);
+  --margin-lr-768: var(--space-24);
+  --margin-lr-480: var(--space-16);
+
+
+  --section-spacing-2k: var(--space-140);
+  --section-spacing-1440: var(--space-120);
+  --section-spacing-1280: var(--space-100);
+  --section-spacing-1024: var(--space-90);
+  --section-spacing-768: var(--space-72);
+  --section-spacing-480: var(--space-52);
+
+
+  --subsection-spacing-2k: var(--space-80);
+  --subsection-spacing-1440: var(--space-72);
+  --subsection-spacing-1280: var(--space-64);
+  --subsection-spacing-1024: var(--space-56);
+  --subsection-spacing-768: var(--space-48);
+  --subsection-spacing-480: var(--space-32);
+
+
+  --hero-top-margin-2k: var(--space-160);
+  --hero-top-margin-1440: var(--space-120);
+  --hero-top-margin-1280: var(--space-100);
+  --hero-top-margin-1024: var(--space-80);
+  --hero-top-margin-768: var(--space-80);
+  --hero-top-margin-480: var(--space-80);
+
+  --hero-heading-2k: var(--font-size-72);
+  --hero-heading-1440: var(--font-size-60);
+  --hero-heading-1280: var(--font-size-48);
+  --hero-heading-1024: var(--font-size-72);
+  --hero-heading-768: var(--font-size-32);
+  --hero-heading-480: var(--font-size-24);
+
+  --hero-subheading-2k: var(--font-size-28);
+  --hero-subheading-1440: var(--font-size-23);
+  --hero-subheading-1280: var(--font-size-20);
+  --hero-subheading-1024: var(--font-size-18);
+  --hero-subheading-768: var(--font-size-16);
+  --hero-subheading-480: var(--font-size-12);
+
+  --hero-cta-spacing-2k: var(--space-40);
+  --hero-cta-spacing-1440: var(--space-32);
+  --hero-cta-spacing-1280: var(--space-28);
+  --hero-cta-spacing-1024: var(--space-24);
+  --hero-cta-spacing-768: var(--space-20);
+  --hero-cta-spacing-480: var(--space-16);
+
+  --hero-heading-subheading-gap-2k: var(--space-32);
+  --hero-heading-subheading-gap-1440: var(--space-24);
+  --hero-heading-subheading-gap-1280: var(--space-20);
+  --hero-heading-subheading-gap-1024: var(--space-16);
+  --hero-heading-subheading-gap-768: var(--space-12);
+  --hero-heading-subheading-gap-480: var(--space-8);
+
+  --footer-spacing-2k: var(--space-100);
+  --footer-spacing-1440: var(--space-80);
+  --footer-spacing-1280: var(--space-72);
+  --footer-spacing-1024: var(--space-64);
+  --footer-spacing-768: var(--space-56);
+  --footer-spacing-480: var(--space-48);
 }
 
 body {
