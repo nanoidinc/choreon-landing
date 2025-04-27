@@ -349,7 +349,7 @@ export const data = {
   docs: {
     topics: [
       {
-        title: 'Getting Started',
+        title: 'Getting Started [Coming soon]',
         description: 'Learn how to get started with Choreon Pulse.',
       },
     ],

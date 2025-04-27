@@ -240,8 +240,14 @@ body, * {
   overflow-x: hidden;
 }
 
+.about.content {
+  flex-direction: row;
+  justify-content: center;
+}
+
 .about.content .section {
   padding-top: 6rem;
+  max-width: 55%;
 }
 
 .about.content .section strong {
