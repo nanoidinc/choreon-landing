@@ -11,7 +11,7 @@ const navLinks = [
 ];
 
 const earlyAccessCta = {
-  href: '#early-access',
+  href: 'https://www.surveymonkey.com/r/BT3NXKC',
   text: 'Get Early Access',
 };
 
@@ -200,10 +200,7 @@ export const data = {
 
   bottomCtaSection: {
     title: 'Embrace Choreon Pulse today!',
-    action: {
-      href: '#early-access',
-      text: 'Get Early Access',
-    },
+    action: earlyAccessCta,
   },
   footer: {
     logo,
