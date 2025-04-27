@@ -349,8 +349,52 @@ export const data = {
   docs: {
     topics: [
       {
-        title: 'Getting Started [Coming soon]',
-        description: 'Learn how to get started with Choreon Pulse.',
+        title: 'Getting Started using CLI',
+        description: (
+          <>
+            First, download the CLI by typing-{' '}
+            <code>
+              curl -fsSL
+              https://public.choreon.dev/artifacts/choreon-cli/install.sh | bash
+            </code>
+            <br />
+            <br />
+            <strong>Commands</strong>
+            <br />
+            <br />
+            <code>choreon-cli init</code>
+            <br />
+            <br />
+            Initialize the CLI configuration and authenticate with Choreon. This
+            command creates the configuration directory and starts the login
+            process. It will open your default browser to complete the
+            authentication.
+            <br />
+            <br />
+            <code>choreon-cli service create</code>
+            <br />
+            <br />
+            Create a new service with the specified configuration. The service
+            can be created from either a Docker image or source code directory.
+            Environment variables can be specified using --envs flag or
+            --env-file. The service can be deployed immediately after creation
+            using --deploy flag.
+            <br />
+            Example-
+            <pre>
+              <code>
+                choreon service create --name amazing-svc --port 8080
+                --healthcheck /health --image docker.io/amazing-svc:9012120
+                --cpu 100 --memory 512 --deploy
+              </code>
+            </pre>
+            <br />
+            <br />
+            Try <code>choreon-cli -h</code> or{' '}
+            <code>choreon-cli [command] [subcommand] -h</code> to know more
+            about specific options.
+          </>
+        ),
       },
     ],
   },
