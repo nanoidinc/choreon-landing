@@ -239,3 +239,11 @@ body, * {
 .content {
   overflow-x: hidden;
 }
+
+.about.content .section {
+  padding-top: 6rem;
+}
+
+.about.content .section strong {
+  font-weight: bold;
+}
