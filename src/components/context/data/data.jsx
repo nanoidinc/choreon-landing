@@ -247,49 +247,63 @@ export const data = {
     questions: [
       {
         title: 'What is Choreon Pulse?',
-        answer: `
-          Choreon is a developer experience automation platform built to eliminate the friction in deploying and scaling software.
-          Our first product, Pulse, is a complete suite designed to take you from rapid prototypes to your first 10,000 customers—without the usual operational headaches.
-
-          Pulse abstracts away infrastructure management, team access, certificates, secrets, and more, so your developers can focus purely on building and shipping faster.
-          With streamlined workflows and simple, transparent pricing, Choreon Pulse empowers startups and scaling businesses to grow efficiently, cost-effectively, and without hidden complexity.
-        `,
+        answer: (
+          <>
+            <strong>
+              Choreon Pulse is a developer workflow platform that simplifies
+              product delivery by abstracting cloud infrastructure and unifying
+              the deployment experience.
+            </strong>
+            <br />
+            <br />
+            Built for startups and fast-moving teams, Pulse handles the
+            complexity of provisioning, deploying, securing, and scaling
+            services—so developers can focus on shipping features, not managing
+            infrastructure.
+            <br />
+            <br />
+            From blazing-fast service deployments to integrated secrets
+            management, lightweight datastores, and built-in gateway
+            authentication, Pulse brings structure and automation to your entire
+            development lifecycle.
+            <br />
+            <br />
+            Whether you're deploying from local or integrating into existing
+            pipelines, Pulse provides a single control plane to manage your
+            services and environments—right out of the box.
+            <br />
+            <br />
+            Looking ahead, our upcoming “Bring Your Own Cloud” feature will
+            allow organizations to connect their own infrastructure accounts
+            (AWS, GCP, and others), gaining full control while continuing to
+            benefit from Pulse’s seamless workflows and automation.
+          </>
+        ),
       },
       {
         title: 'Is Choreon just another cloud service provider (CSP)?',
         answer: (
           <>
-            Choreon is the ultimate abstraction layer built atop leading cloud
-            service providers (AWS, GCP, DigitalOcean, and more), designed to
-            streamline product delivery and revolutionize the developer
-            experience. Instead of simply offering infrastructure, Choreon
-            eliminates the friction, complexity, and manual steps from your
-            development lifecycle—so your team can focus entirely on what
-            matters most: building and shipping great products.
+            No. Choreon is not a cloud provider—it is a developer experience and
+            workflow platform that operates atop trusted public cloud
+            infrastructure like AWS, GCP, and others.
             <br />
             <br />
-            Whether you're crafting your MVP, scaling a fast-growing startup, or
-            supporting thousands of users, Choreon Pulse optimizes every part of
-            your workflow. From infrastructure management and access controls to
-            certificate handling and secrets management, Pulse removes the
-            operational overhead that slows teams down. Say goodbye to
-            deployment headaches, tedious maintenance, and complex audits. Under
-            the hood, your services run on the most reliable CSPs, while Pulse
-            gives you a seamless, easy-to-use platform to deploy, scale, and
-            operate at speed—perfect for individual developers, small teams, and
-            growing businesses.
+            We do not offer infrastructure directly. Instead, Choreon Pulse
+            removes the operational complexity of using cloud platforms by
+            abstracting deployment, configuration, secrets, and basic
+            observability into a single, easy-to-use layer.
             <br />
             <br />
-            And we’re just getting started. Coming soon, Choreon Nexus will
-            power large organizations with existing CSP workloads. Acting as a
-            unified control plane for multi-cloud environments, Nexus offers
-            everything Pulse delivers—plus seamless integration into your
-            existing cloud and on-premises infrastructure. With Nexus, you bring
-            your own cloud, and we bring the best developer experience. Choreon
-            empowers startups to launch faster, businesses to scale smarter, and
-            enterprises to operate with developer-first efficiency—all through a
-            single, unified platform. No more complexity. No more friction. Just
-            pure focus on innovation.
+            Your services are still powered by leading CSPs. Choreon simply
+            makes that infrastructure usable in a more streamlined,
+            developer-first way. This lets you launch, scale, and operate
+            faster—without becoming an expert in cloud operations.
+            <br />
+            <br />
+            In the future, we will extend this abstraction into multi-cloud and
+            bring-your-own-cloud environments, giving larger organizations even
+            more flexibility while maintaining the same seamless control plane.
           </>
         ),
       },
@@ -297,47 +311,38 @@ export const data = {
         title: 'How does Choreon Pulse add value?',
         answer: (
           <>
-            Choreon Pulse is the control plane for modern development,
-            abstracting away compute complexity and delivering a seamless
-            deployment experience. By fully managing your delivery
-            infrastructure, Pulse frees your product and engineering teams to
-            focus on what truly matters—building features, not fighting
-            operational bottlenecks. With Choreon Pulse, you get:
+            Choreon Pulse simplifies cloud-based development by abstracting
+            common operational challenges and delivering a faster,
+            developer-focused workflow.
             <br />
             <br />
-            <strong>Blazing-Fast Deployments:</strong> Deploy services in
-            seconds using our lightweight CLI or intuitive UI. Whether launching
-            containers or deploying directly from a source repository, Pulse
-            integrates effortlessly with your existing pipelines and streamlines
-            your CI/CD workflows from day one. Just starting out and deploying
-            from your local machine? We’ve got you covered too.
+            <strong>Blazing-Fast Deployments:</strong> Launch services in
+            minutes using our lightweight CLI or visual UI. Pulse integrates
+            with your existing pipelines, supports both container and
+            source-based deployments, and works even if you're just getting
+            started locally.
             <br />
             <br />
-            <strong>Effortless Secrets and Environment Management:</strong>
-            Manage secrets and environment variables with ease. Securely attach
-            secrets to services, instantly detach them during emergencies, and
-            maintain complete control—all without the need for complex external
-            tooling.
+            <strong>Secrets and Environment Management:</strong> Easily manage
+            secrets and environment variables. Attach them securely to services,
+            detach them instantly when needed—all without external tooling.
             <br />
             <br />
-            <strong>Integrated Full-Stack Services:</strong> Pulse offers
-            lightweight, community-powered datastores you can easily connect to
-            your services, enabling you to build full-stack products right out
-            of the gate. As your business grows, seamlessly upgrade to
-            enterprise-grade databases from leading cloud providers—without ever
-            leaving the familiar Pulse control plane. Datastore integrations are
-            automatic, including secure secret management, so you can scale with
-            confidence.
+            <strong>Integrated Full-Stack Services:</strong> Spin up lightweight
+            datastores using community-backed technologies. Build full-stack
+            apps without setup friction. As you grow, transition to
+            production-grade solutions from CSPs—without leaving Pulse.
             <br />
             <br />
-            <strong>Simple, Built-In Gateway Authentication:</strong> Control
-            access effortlessly. Choose which services are public or private
-            with a built-in edge authentication layer—no complicated setup or
-            third-party tools required. Native Observability: Get real-time
-            visibility into your services from day one. Pulse provides built-in
-            basic monitoring and alerting, with the flexibility to forward logs
-            and metrics to third-party observability platforms when needed—all
-            without additional setup.
+            <strong>Built-in Gateway Authentication:</strong> Control which
+            services are public or private through a built-in
+            edge-authentication layer—no need for complex configurations or
+            third-party systems until you grow beyond a certain scale.
+            <br />
+            <br />
+            <strong>Native Observability:</strong> Get real-time visibility with
+            basic built-in monitoring and alerting. Forward logs and metrics to
+            third-party platforms when needed, with minimal setup.
           </>
         ),
       },
