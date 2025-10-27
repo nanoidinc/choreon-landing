@@ -351,20 +351,170 @@ export const data = {
   docs: {
     topics: [
       {
+        title: 'Getting Started with Service Deployment (UI)',
+        description: (
+          <>
+            <strong>Prerequisites</strong>
+            <br />
+            • For Repository deployment: GitHub or GitLab account
+            <br />
+            • For Private Registry deployment: Docker Hub account or other
+            registry credentials
+            <br />
+            <br />
+            <strong>Deployment Methods</strong>
+            <br />
+            <br />
+            <strong>Method 1: Deploy from Public Image</strong>
+            <br />
+            Use this method for quick deployments with publicly available Docker
+            images.
+            <br />
+            <br />
+            Steps:
+            <br />
+            1. Navigate to <strong>Create Service → Basic Setup</strong>
+            <br />
+            2. Configure your service:
+            <br />
+            <pre>
+              <code>
+                {'  '}• Registry Host: docker.io
+                {'\n  '}• Image: nmatsui/hello-world-api
+                {'\n  '}• Port: 3000
+              </code>
+            </pre>
+            3. Select appropriate CPU and memory allocation
+            <br />
+            4. Click Deploy
+            <br />
+            <br />
+            Expected result: Service deploys successfully with a public URL
+            generated.
+            <br />
+            <br />
+            <strong>Method 2: Deploy from Private Registry</strong>
+            <br />
+            Use this method for deploying private images that require
+            authentication.
+            <br />
+            <br />
+            First-time setup:
+            <br />
+            1. Navigate to Create Service page
+            <br />
+            2. Click <strong>Add Registry</strong>
+            <br />
+            3. Configure your registry:
+            <br />
+            <pre>
+              <code>
+                {'  '}• Host: docker.io (or your registry URL)
+                {'\n  '}• Username: Your registry username
+                {'\n  '}• Password: Your registry password/token
+              </code>
+            </pre>
+            4. Click <strong>Proceed</strong> to save
+            <br />
+            <br />
+            Deploy your service:
+            <br />
+            1. Select your configured registry from the dropdown
+            <br />
+            2. Enter your private image name (e.g., username/private-app)
+            <br />
+            3. Specify the port your application listens on
+            <br />
+            4. Select resources and Deploy
+            <br />
+            <br />
+            <strong>Method 3: Deploy from Repository (CI/CD)</strong>
+            <br />
+            Use this method for automatic builds from your source code
+            repository.
+            <br />
+            <br />
+            Steps:
+            <br />
+            1. Navigate to <strong>Create Service → Advanced Setup</strong>
+            <br />
+            2. Switch Source Type from "Image" to "Repository"
+            <br />
+            3. Connect your repository:
+            <br />
+            <pre>
+              <code>
+                {'  '}• Provider: Select GitHub or GitLab
+                {'\n  '}• Branch: Select your deployment branch
+                {'\n  '}• Port: Specify your application's listening port
+              </code>
+            </pre>
+            4. Configure build settings if needed
+            <br />
+            5. Select resources and Deploy
+            <br />
+            <br />
+            Expected result: Build process initiates automatically, service
+            deploys from the pipeline, and a public URL is generated.
+            <br />
+            <br />
+            <strong>Validation</strong>
+            <br />
+            <br />
+            After deployment, verify:
+            <br />
+            • Service status shows as "Running"
+            <br />
+            • Public URL is accessible
+            <br />
+            • Application responds correctly
+            <br />
+            • Service logs show successful startup
+            <br />
+            • Resource allocation matches your configuration
+            <br />
+            <br />
+            <strong>Troubleshooting</strong>
+            <br />
+            <br />
+            <strong>Port mismatch error:</strong> Ensure the port matches your
+            application's listening port
+            <br />
+            <br />
+            <strong>Authentication fails:</strong> Verify your registry
+            credentials and ensure the registry is properly saved
+            <br />
+            <br />
+            <strong>Build fails:</strong> Check your repository's build
+            configuration and ensure all required files are present
+            <br />
+            <br />
+            <strong>Image pull fails:</strong> Verify the image name and ensure
+            you have proper access credentials
+            <br />
+          </>
+        ),
+      },
+      {
         title: 'Getting Started using CLI',
         description: (
           <>
-            First, download the CLI by typing-{' '}
+            First, download the CLI by running:{' '}
             <code>
               curl -fsSL
               https://public.choreon.dev/artifacts/choreon-cli/install.sh | bash
             </code>
             <br />
             <br />
-            <strong>Commands</strong>
+            After installation, verify the CLI is installed correctly:
+            <br />
+            <code>choreon version</code>
             <br />
             <br />
-            <code>choreon-cli init</code>
+            <strong>Getting Started</strong>
+            <br />
+            <br />
+            <code>choreon init</code>
             <br />
             <br />
             Initialize the CLI configuration and authenticate with Choreon. This
@@ -373,7 +523,16 @@ export const data = {
             authentication.
             <br />
             <br />
-            <code>choreon-cli service create</code>
+            <strong>Managing Services</strong>
+            <br />
+            <br />
+            <code>choreon service list</code>
+            <br />
+            <br />
+            List all services in your account.
+            <br />
+            <br />
+            <code>choreon service create</code>
             <br />
             <br />
             Create a new service with the specified configuration. The service
@@ -382,19 +541,57 @@ export const data = {
             --env-file. The service can be deployed immediately after creation
             using --deploy flag.
             <br />
-            Example-
+            <br />
+            <strong>Examples:</strong>
+            <br />
+            <br />
+            Deploy from a public Docker image:
             <pre>
               <code>
-                choreon service create --name amazing-svc --port 8080
-                --healthcheck /health --image docker.io/amazing-svc:9012120
-                --cpu 100 --memory 512 --deploy
+                choreon service create \{'\n  '}--name nginx-test \{'\n  '}
+                --image nginx:latest \{'\n  '}--port 80 \{'\n  '}--healthcheck /
+                \{'\n  '}--memory 128 \{'\n  '}--cpu 50 \{'\n  '}--public \
+                {'\n  '}--deploy
               </code>
             </pre>
             <br />
+            Deploy from a private Docker image:
+            <pre>
+              <code>
+                choreon service create \{'\n  '}--name my-app \{'\n  '}--image
+                registry.example.com/my-app:latest \{'\n  '}--port 8080 \
+                {'\n  '}--healthcheck /health \{'\n  '}--image-credentials '
+                {`'{"username": "user", "password": "pass"}'`}' \{'\n  '}
+                --memory 512 \{'\n  '}--cpu 100 \{'\n  '}--public \{'\n  '}
+                --deploy
+              </code>
+            </pre>
             <br />
-            Try <code>choreon-cli -h</code> or{' '}
-            <code>choreon-cli [command] [subcommand] -h</code> to know more
-            about specific options.
+            Deploy from source code:
+            <pre>
+              <code>
+                choreon service create \{'\n  '}--name my-app \{'\n  '}--src
+                /path/to/source \{'\n  '}--port 8080 \{'\n  '}--healthcheck / \
+                {'\n  '}--memory 128 \{'\n  '}--cpu 100 \{'\n  '}--public \
+                {'\n  '}--deploy
+              </code>
+            </pre>
+            <br />
+            <code>choreon service get --name [service-name]</code>
+            <br />
+            <br />
+            Get detailed information about a specific service.
+            <br />
+            <br />
+            <code>choreon service delete --name [service-name]</code>
+            <br />
+            <br />
+            Delete a service from your account.
+            <br />
+            <br />
+            Try <code>choreon -h</code> or{' '}
+            <code>choreon [command] [subcommand] -h</code> to learn more about
+            specific commands and options.
           </>
         ),
       },
