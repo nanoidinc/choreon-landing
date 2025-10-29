@@ -351,50 +351,249 @@ export const data = {
   docs: {
     topics: [
       {
-        title: 'Getting Started using CLI',
+        title: 'Deploying a service from portal UI',
         description: (
           <>
-            First, download the CLI by typing-{' '}
+            <strong>Prerequisites</strong>
+            <br />
+            • For deployment from a repository: GitHub or GitLab account, which
+            you have used to log in.
+            <br />
+            • For deploying image from a private registry: any private registry
+            credentials e.g. github, gitlab, docker hub etc.
+            <br />
+            <br />
+            <strong>Ways to deploy a service</strong>
+            <br />
+            <br />
+            <strong>
+              Method 1: Deploy a service image hosted in a public registry
+            </strong>
+            <br />
+            Note: Use this method for quick deployments if your service image is
+            pushed into a public registry.
+            <br />
+            <br />
+            Steps:
+            <br />
+            1. Navigate to <code>Create Service</code>
+            <br />
+            2. Configure your service:
+            <br />
+            Example inputs -
+            <pre>
+              <code>
+                {'  '}• Registry Host: docker.io
+                {'\n  '}• Image: nmatsui/hello-world-api
+                {'\n  '}• Port: 3000
+              </code>
+            </pre>
+            3. Provide the healthcheck endpoint, and then select appropriate CPU
+            and memory credits for your service.
+            <br />
+            4. Click deploy.
+            <br />
+            <br />
+            Expected result: Service deploys successfully with a public URL. You
+            can uncheck the <code>Expose Publicly</code> checkbox to disable
+            exposing the service publicly, in which case it will be privately
+            available to other services you deploy, but not to others over the
+            internet.
+            <br />
+            <br />
+            <strong>
+              Method 2: Deploy a service image from private registry
+            </strong>
+            <br />
+            Note: Use this method for deploying images hosted in a private
+            registry. For example, if you are pushing the built image to a
+            registry from some pipeline e.g. Github actions.
+            <br />
+            <br />
+            Steps:
+            <br />
+            1. Same as public registry one, but now you should add your registry
+            by clicking on <code>+ Add private registry</code>.
+            <br />
+            <br />
+            <pre>
+              <code>
+                {'  '}• Host: docker.io (or your registry URL)
+                {'\n  '}• Username: Your registry username
+                {'\n  '}• Password: Your registDeploying a service from pry
+                password/auth token
+              </code>
+            </pre>
+            <br />
+            <br />
+            2. Select your configured registry from the dropdown in{' '}
+            <code>Registry Host</code>.
+            <br />
+            <br />
+            <strong>Method 3: Deploy from a repository</strong>
+            <br />
+            Note: Use this method for automatic builds from your source code
+            repository. Choreon will create a private container registry where
+            the image will be pushed.
+            <br />
+            <br />
+            Steps:
+            <br />
+            1. Toggle on <code>Advanced Setup</code> in{' '}
+            <code>Create Service</code>.
+            <br />
+            2. Switch source kind from "From Container Registry" to "From
+            Repository".
+            <br />
+            3. Select your repository, and then the branch from where the
+            service image should be built.
+            <br />
+            4. In build settings, provide your Dockerfile location in the source
+            repository. By default Choreon will expect it to be in the root i.e.{' '}
+            <code>/</code>. Alternatively, Choreon can use{' '}
+            <a
+              href="https://buildpacks.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cloud Native Buildpacks
+            </a>
+            , but the support is experimental.
+            <br />
+            5. In deploy parameters, select resources like before and proceed.
+            <br />
+            6. In miscelleneous step, you can provide necessary env variables,
+            and even CORS related settings. Once you are happy, click
+            "Continue".
+            <br />
+            Expected result: Build process initiates automatically, service
+            deploys from the pipeline, and a public URL is generated which
+            eventually shows working service response.
+            <br />
+            <br />
+            <strong>Troubleshooting</strong>
+            <br />
+            <br />
+            <strong>Port mismatch error:</strong> Ensure the port matches your
+            container images listening port.
+            <br />
+            <br />
+            <strong>Authentication failure while fetching image:</strong> Verify
+            your registry credentials and ensure the registry is created using
+            "Add private registry".
+            <br />
+            <br />
+            <strong>Build fails:</strong> Check Choreon generated pipeline
+            files, and contact us if support is needed.
+            <br />
+            <br />
+            <strong>Image pull fails:</strong> Verify the image name, version
+            etc. and ensure you have proper access credentials.
+            <br />
+          </>
+        ),
+      },
+      {
+        title: 'Deploying a service using our CLI',
+        description: (
+          <>
+            First, install the CLI by running:{' '}
             <code>
               curl -fsSL
               https://public.choreon.dev/artifacts/choreon-cli/install.sh | bash
             </code>
             <br />
             <br />
-            <strong>Commands</strong>
+            After installation, verify the CLI is installed correctly:
+            <br />
+            <code>choreon version</code>
             <br />
             <br />
-            <code>choreon-cli init</code>
+            <strong>Getting Started</strong>
             <br />
             <br />
-            Initialize the CLI configuration and authenticate with Choreon. This
-            command creates the configuration directory and starts the login
-            process. It will open your default browser to complete the
-            authentication.
+            <code>choreon init</code>
             <br />
             <br />
-            <code>choreon-cli service create</code>
+            This command starts the login process with Choreon. It will open
+            your default browser to complete the steps.
+            <br />
+            <br />
+            <strong>Managing Services</strong>
+            <br />
+            <br />
+            <code>choreon service list</code>
+            <br />
+            <br />
+            List all services in your account.
+            <br />
+            <br />
+            <code>choreon service create</code>
             <br />
             <br />
             Create a new service with the specified configuration. The service
-            can be created from either a Docker image or source code directory.
-            Environment variables can be specified using --envs flag or
-            --env-file. The service can be deployed immediately after creation
-            using --deploy flag.
+            can be created from either an image or from a source code directory.
+            Environment variables can be specified using <code>
+              --envs
+            </code>{' '}
+            flag or providing a <code>.env</code> file with{' '}
+            <code>--env-file</code>. The service can be deployed immediately
+            after creation using the <code>--deploy</code> flag.
             <br />
-            Example-
+            Check the help by doing <code>choreon -h</code> to understand each
+            of the available options.
+            <br />
+            <br />
+            <strong>Some Examples:</strong>
+            <br />
+            <br />
+            Deploy from a public image:
             <pre>
               <code>
-                choreon service create --name amazing-svc --port 8080
-                --healthcheck /health --image docker.io/amazing-svc:9012120
-                --cpu 100 --memory 512 --deploy
+                choreon service create \{'\n  '}--name nginx-test \{'\n  '}
+                --image nginx:latest \{'\n  '}--port 80 \{'\n  '}--healthcheck /
+                \{'\n  '}--memory 128 \{'\n  '}--cpu 50 \{'\n  '}--public \
+                {'\n  '}--deploy
               </code>
             </pre>
             <br />
+            Deploy from a private registry:
+            <pre>
+              <code>
+                choreon service create \{'\n  '}--name my-app \{'\n  '}--image
+                registry.example.com/my-app:latest \{'\n  '}--port 8080 \
+                {'\n  '}--healthcheck /health \{'\n  '}--image-credentials '
+                {`'{"username": "user", "password": "pass"}'`}' \{'\n  '}
+                --memory 512 \{'\n  '}--cpu 100 \{'\n  '}--public \{'\n  '}
+                --deploy
+              </code>
+            </pre>
             <br />
-            Try <code>choreon-cli -h</code> or{' '}
-            <code>choreon-cli [command] [subcommand] -h</code> to know more
-            about specific options.
+            Deploy from a local source folder:
+            <pre>
+              <code>
+                choreon service create \{'\n  '}--name my-app \{'\n  '}--src
+                /path/to/source/dir \{'\n  '}--port 8080 \{'\n  '}--healthcheck
+                / \{'\n  '}--memory 128 \{'\n  '}--cpu 100 \{'\n  '}--public \
+                {'\n  '}--deploy
+              </code>
+            </pre>
+            <br />
+            <code>choreon service get --name [service-name]</code>
+            <br />
+            <br />
+            Get detailed information about a specific service.
+            <br />
+            <br />
+            <code>choreon service delete --name [service-name]</code>
+            <br />
+            <br />
+            Delete a service from your account.
+            <br />
+            <br />
+            Try <code>choreon -h</code> or{' '}
+            <code>choreon [command] [subcommand] -h</code> to learn more about
+            specific commands and options.
           </>
         ),
       },
