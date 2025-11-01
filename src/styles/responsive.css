@@ -96,7 +96,11 @@
     text-align: center;
     padding: 2.5rem;
     aspect-ratio: initial;
-    background: linear-gradient(143.09deg, rgba(91, 158, 190, 0.15) 61.28%, rgba(42, 73, 88, 0.15) 90.03%);
+    background: linear-gradient(
+      143.09deg,
+      rgba(91, 158, 190, 0.15) 61.28%,
+      rgba(42, 73, 88, 0.15) 90.03%
+    );
     border-radius: 6px;
   }
 
@@ -140,7 +144,6 @@
   }
 }
 
-
 @media (max-width: 1024px), (max-width: 1439px) {
   .section {
     padding: var(--default-section-padding) var(--space-80);
@@ -167,7 +170,8 @@
 @media (min-width: 791px) and (max-width: 1919px) {
   .section,
   .spotlight .img-wrapper {
-    padding: var(--default-section-padding) var(--default-section-horizontal-padding);
+    padding: var(--default-section-padding)
+      var(--default-section-horizontal-padding);
   }
 
   .section {
@@ -236,7 +240,7 @@
 
   header {
     padding: 1rem var(--default-section-horizontal-padding);
-    height: var(--space-75);
+    height: var(--space-60);
   }
 
   .section-title {
@@ -338,7 +342,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1439px),
-       (min-width: 1280px) and (max-width: 1439px) {
+  (min-width: 1280px) and (max-width: 1439px) {
   .section {
     margin-left: var(--margin-lr-1280);
     margin-right: var(--margin-lr-1280);
